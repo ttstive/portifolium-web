@@ -4,8 +4,11 @@ import numpy as np
 from pathlib import Path
 from PIL import Image
 
+
+
 css_file = "style.css"
 cv_file = "Images/cv Estevão 2024 - 2°Semestre.pdf"
+cv_portuguese = "Images/cv ptEstevão 2024 - 2°Semestre-1.pdf"
 
 profile_photo = "Images/foto cv atual.png"
 PAGE_TITLE = "Data Science Resume"
@@ -13,10 +16,11 @@ PAGE_ICON = ":wave:"
 NAME = "Estevão Lins Maia"
 PROFILE = "Data Scientist"
 AGE = 20
-DESCRIPTION = " am a passionate data scientist with a fervor for innovation and problem-solving. Currently, I am honing my skills as a data analyst at Sicoob, one of Brazil's leading credit cooperatives. This role has been an incredible opportunity to grow and make a significant impact. As I pursue a degree in Software Engineering, I am continually seeking new challenges and opportunities to expand my expertise. My belief is that technology is a driving force in all areas of life, and I am deeply committed to advancing the fields of data science, data engineering, and software development."
+DESCRIPTION = "I'm a passionate data scientist with a fervor for innovation and problem-solving. Currently, I am honing my skills as a data analyst at Sicoob, one of Brazil's leading credit cooperatives. This role has been an incredible opportunity to grow and make a significant impact. As I pursue a degree in Software Engineering, I am continually seeking new challenges and opportunities to expand my expertise. My belief is that technology is a driving force in all areas of life, and I am deeply committed to advancing the fields of data science, data engineering, and software development."
 EMAIL = "estevaolins94@gmail.com"
 SOCIAL_MEDIA = { "🐈‍⬛ github": "https://github.com/ttstive",
-"🌎 linkedin":"https://www.linkedin.com/in/estevaolins/"}
+"🌎 linkedin":"https://www.linkedin.com/in/estevaolins/",
+"✉️ contact me": "estevaolins94@gmail.com"}
 
 
 projects = {
@@ -26,6 +30,8 @@ projects = {
     "project4": "Playlist Recommendation with Spotify API", "link4": "https://github.com/ttstive/Sistema_recomendador_de_musicas", "image4": "Images/spotify theme.png",
     "project6": "Little Cat Groceries", "link6": "https://app.powerbi.com/groups/me/reports/3e3a8d44-bd85-4571-899f-f3a95af3796f/ReportSection?experience=power-bi", "image6": "Images/Captura de tela de 2024-08-05 21-21-11.png"}
 
+
+
 st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON)
 
 with open(css_file) as f:
@@ -33,7 +39,8 @@ with open(css_file) as f:
 with open(cv_file, "rb") as pdf_file:
     pdf_Byte = pdf_file.read()
     profile_photo = Image.open(profile_photo)
-
+with open(cv_portuguese, "rb") as pdf_file:
+    pdf_Byte2 = pdf_file.read()
 # Hero section
 st.markdown("""
 <style>
@@ -75,9 +82,15 @@ with col2:
     st.title(NAME)
     st.write(DESCRIPTION)
     st.download_button(
-        label=" 📄 Download Resume",
+        label="📄 Download Resume",
         data=pdf_Byte,
         file_name=cv_file,
+        mime="application/octet-stream",
+    )
+    st.download_button(
+        label="📄 Download Resume Portuguese",
+        data= pdf_Byte2,
+        file_name=cv_portuguese,
         mime="application/octet-stream",
     )
     st.write('\n')
@@ -132,7 +145,7 @@ with col0:
     st.image("Images/sicooblogo.jpg", width=269)
 
 with col01:
-    st.write("🔍", "**Junior Data Analyst | Sicoob**")
+    st.write("🔍", "** Data Analyst | Sicoob**")
     st.write("10/2023 - Present")
     st.write(
         """
@@ -225,7 +238,7 @@ st.write('\n')
 col7, col8 = st.columns(2)
 
 
-with col8:
+with col7:
     st.markdown('<div class="image-container">', unsafe_allow_html=True)
     st.write("🔍", f"[{projects['project6']}]({projects['link6']})")
     st.image(projects["image6"], width=300)
