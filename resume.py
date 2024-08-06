@@ -7,7 +7,7 @@ from PIL import Image
 css_file = "style.css"
 cv_file = "Images/cv Estevão 2024 - 2°Semestre.pdf"
 
-profile_photo = "Images/image_123650291.JPG"
+profile_photo = "Images/foto cv atual.png"
 PAGE_TITLE = "Data Science Resume"
 PAGE_ICON = ":wave:"
 NAME = "Estevão Lins Maia"
@@ -24,8 +24,7 @@ projects = {
     "project2": "Car crashes Analysis Worldwide", "link2": "https://github.com/ttstive/Vehicules-Crash-Analysis", "image2": "Images/data_crash.png",
     "project3": "Flappy Bird with AI", "link3": "https://github.com/ttstive/jogo_flappybird", "image3": "Images/flappy-bird.jpg",
     "project4": "Playlist Recommendation with Spotify API", "link4": "https://github.com/ttstive/Sistema_recomendador_de_musicas", "image4": "Images/spotify theme.png",
-    "project5": "Population Pyramid", "link5": "https://estevaodata.000webhostapp.com/comparacao_piramides_etarias.html", "image5": "Images/pyramids analysis.png",
-    "project6": "Statistics Fundamentals", "link6": "https://github.com/ttstive/analise_dados_temporais/tree/main", "image6": "Images/Statistics Fundamentals.png"}
+    "project6": "Little Cat Groceries", "link6": "https://app.powerbi.com/groups/me/reports/3e3a8d44-bd85-4571-899f-f3a95af3796f/ReportSection?experience=power-bi", "image6": "Images/Captura de tela de 2024-08-05 21-21-11.png"}
 
 st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON)
 
@@ -62,11 +61,15 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
+
+
+
+
 st.markdown('<a id="hero"></a>', unsafe_allow_html=True)
 
 col1, col2 = st.columns(2, gap="small")
 with col1:
-    st.image(profile_photo, width=230)
+    st.image(profile_photo, width=300)
 
 with col2:
     st.title(NAME)
@@ -221,11 +224,6 @@ st.write('\n')
 
 col7, col8 = st.columns(2)
 
-with col7:
-    st.markdown('<div class="image-container">', unsafe_allow_html=True)
-    st.write("🔍", f"[{projects['project5']}]({projects['link5']})")
-    st.image(projects["image5"], width=300)
-    st.markdown('</div>', unsafe_allow_html=True)
 
 with col8:
     st.markdown('<div class="image-container">', unsafe_allow_html=True)
