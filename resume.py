@@ -133,7 +133,7 @@ with col0:
     st.image("Images/stefanini logo.png", width=269)
 
 with col01:
-    st.write("🧙‍♂️", "**Mid Level Data Engineer| Up Estágios**")
+    st.write("**Data Engineer| Stefanin Latam**")
     st.write("03/2023 - 10/2023")
     st.write(
         """
@@ -152,7 +152,7 @@ with col02:
     st.image("Images/sicooblogo.jpg", width=269)
 
 with col03:
-    st.write("🔍", "** Data Analyst | Sicoob**")
+    st.write("🔍", "** Junior Data Analyst | Sicoob**")
     st.write("10/2023 - Present")
     st.write(
         """
